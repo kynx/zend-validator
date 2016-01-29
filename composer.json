@@ -18,18 +18,19 @@
         "container-interop/container-interop": "^1.1"
     },
     "require-dev": {
-        "zendframework/zend-cache": "dev-develop as 2.6.0",
+        "zendframework/zend-cache": "dev-sm-v2-v3 as 2.6.0",
         "zendframework/zend-config": "dev-develop as 2.6.0",
         "zendframework/zend-db": "dev-develop as 2.7.0",
-        "zendframework/zend-filter": "dev-develop as 2.6.0",
+        "zendframework/zend-filter": "dev-v2-v3-compat as 2.6.0",
         "zendframework/zend-http": "~2.5",
-        "zendframework/zend-i18n": "dev-develop as 2.6.0",
+        "zendframework/zend-i18n": "dev-feature/21 as 2.6.0",
         "zendframework/zend-math": "dev-develop as 2.6.0",
-        "zendframework/zend-servicemanager": "^2.7.2 || ^3.0",
+        "zendframework/zend-servicemanager": "dev-v3-aliases-property as 3.0",
         "zendframework/zend-session": "dev-develop as 2.6.0",
         "zendframework/zend-uri": "~2.5",
         "fabpot/php-cs-fixer": "1.7.*",
-        "phpunit/PHPUnit": "~4.0"
+        "phpunit/PHPUnit": "~4.0",
+        "kynx/servicemanager-migration": "dev-master"
     },
     "suggest": {
         "zendframework/zend-db": "Zend\\Db component",
@@ -51,7 +52,26 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ZendTest\\Validator\\": "test/"
+            "ZendTest\\Validator\\": "test/",
+            "ZendTest\\ServiceManager\\": "vendor/zendframework/zend-servicemanager/test/"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-servicemanager"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-cache"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:kynx/zend-filter"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:weierophinney/zend-i18n"
+        }
+    ]
 }
